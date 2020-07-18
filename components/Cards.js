@@ -22,16 +22,18 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 const card = document.querySelector('.cards-container');
-//https://zellwk.com/blog/looping-through-js-objects/
+
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(art => {
-const dataKeys      =    Object.keys(art.data.articles) 
-     for (let i = 0; i <dataKeys.length; i++) {
-     const type = dataKeys[i];
+const dataKeys =Object.keys(art.data.articles) 
+     for (let i = 0; i <dataKeys.length; i++) { //loops through object
+     const type = dataKeys[i]; 
      art.data.articles[`${type}`].forEach(article => {
      card.appendChild(articleMaker(article))
-})}})
+})
+}
+});
 
 
 function articleMaker(obj){
@@ -51,22 +53,22 @@ function articleMaker(obj){
 	cardDiv.appendChild(headlineDiv);       //   <div class="headline">{Headline of article}</div>
 	cardDiv.appendChild(authorDiv);         //   <div class="author">
 	authorDiv.appendChild(imgDiv);          //     <div class="img-container">
-	imgDiv.appendChild(imgLink);         //       <img src={url of authors image} /> 
+	imgDiv.appendChild(imgLink);            //       <img src={url of authors image} /> 
 									//	  </div>
 	authorDiv.appendChild(nameSpan);        //     <span>By {author's name}</span>
 									//   </div>
 									// </div>
 
 //Adding Classes
-     cardDiv.classList.add('card');	//<div class="card">
+     cardDiv.classList.add('card');		//<div class="card">
      headlineDiv.classList.add('headline');	//<div class="headline">
-     authorDiv.classList.add('author');	//<div class="author">
+     authorDiv.classList.add('author');		//<div class="author">
      imgDiv.classList.add('img-container');	//<div class="img-container">
 
 //Adding Content
 	headlineDiv.textContent 	= obj.headline; 	//<div class="headline">{Headline of article}</div>
      //not sure why these img are not populating on server, links look good in inspect.
-     imgLink.src	          = obj.authorPhoto;	//<img src={url of authors image} />
+     imgLink.src			= obj.authorPhoto;	//<img src={url of authors image} />
 	nameSpan.textContent	= obj.authorName;	//<span>By {author's name}</span>
 
 // Add a listener for click events so that when a user clicks on a card
@@ -74,7 +76,7 @@ function articleMaker(obj){
           console.log(obj.headline);
      })
 //Test/Return
-	console.log(cardDiv);
+	//console.log(cardDiv);
 	return cardDiv;
 }
 

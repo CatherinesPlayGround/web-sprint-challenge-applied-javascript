@@ -28,7 +28,7 @@ function tabMaker(obj){
 	//Adding Content
 		tabItem.textContent =obj;
 
-//Test/Return
-	return tabItem;
+	//Test/Return
+		return tabItem;
 }
 

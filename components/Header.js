@@ -42,8 +42,8 @@ function Header() {
 											//  </div>
 	
 	//Testing and Return
-	console.log(headerDiv);
-	return (headerDiv)
+		//console.log(headerDiv);
+		return (headerDiv)
 
 }
 const headerCon	= document.querySelector('.header-container')	
