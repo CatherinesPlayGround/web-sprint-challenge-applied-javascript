@@ -51,7 +51,7 @@ function articleMaker(obj){
 	cardDiv.appendChild(headlineDiv);       //   <div class="headline">{Headline of article}</div>
 	cardDiv.appendChild(authorDiv);         //   <div class="author">
 	authorDiv.appendChild(imgDiv);          //     <div class="img-container">
-	authorDiv.appendChild(imgLink);         //       <img src={url of authors image} /> 
+	imgDiv.appendChild(imgLink);         //       <img src={url of authors image} /> 
 									//	  </div>
 	authorDiv.appendChild(nameSpan);        //     <span>By {author's name}</span>
 									//   </div>
@@ -69,7 +69,9 @@ function articleMaker(obj){
 	nameSpan.textContent	= obj.authorName;	//<span>By {author's name}</span>
 
 // Add a listener for click events so that when a user clicks on a card
-     
+     cardDiv.addEventListener('click', ()=>{
+          console.log(obj.headline);
+     })
 //Test/Return
 	console.log(cardDiv);
 	return cardDiv;
