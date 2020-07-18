@@ -65,7 +65,8 @@ function articleMaker(obj){
 
 //Adding Content
 	headlineDiv.textContent 	= obj.headline; 	//<div class="headline">{Headline of article}</div>
-	imgLink.src	          = obj.authorPhoto;	//<img src={url of authors image} />
+     //not sure why these img are not populating on server, links look good in inspect.
+     imgLink.src	          = obj.authorPhoto;	//<img src={url of authors image} />
 	nameSpan.textContent	= obj.authorName;	//<span>By {author's name}</span>
 
 // Add a listener for click events so that when a user clicks on a card
