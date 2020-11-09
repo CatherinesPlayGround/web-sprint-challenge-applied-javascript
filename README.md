@@ -1,3 +1,20 @@
+To who ever @ lambda checks these... (assuming someone one does) If the project has changed at all / I need to do a fresh one please let me know.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Applied JavaScript Sprint Challenge
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
